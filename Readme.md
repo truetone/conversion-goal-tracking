@@ -1,6 +1,6 @@
 # Conversion Goal Tracking In Google Analytics
 
-[Impress.js](https://github.com/bartaz/impress.js) presentation about conversion goal tracking in Google Analytics.
+[Impress.js](http://bartaz.github.com/impress.js/#/bored) presentation about conversion goal tracking in Google Analytics.
 
 ## Submodules
 
