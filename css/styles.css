@@ -1,0 +1,24 @@
+/* Impress.js not-supported message. */
+.no-support-message { display:none; }
+.impress-not-supported .no-support-message { display:block; }
+
+.step {
+	height: 795px;
+	width: 1000px;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+}
+h1 {
+	font-size: 5em;
+}
+h2 {
+	font-size: 3em;
+}
+img {
+	max-height: 495px;
+	max-width: 700px;
+}
+p {
+	font-size: 1.5em;
+}
