@@ -1,36 +1,114 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Conversion-goal-tracking by thoma127</title>
+	<head>
+		<title>Conversion Goal Tracking In Google Analytics</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Conversion-goal-tracking</h1>
-        <p>Impress.js presentation on conversion goal tracking in Google Analytics</p>
+		<link rel="stylesheet" href="css/normalize/normalize.css" type="text/css" media="all">
+		<link rel="stylesheet" href="js/highlight/highlight.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+		<link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="impress">
+			<div class="no-support-message">
+				Your browser is not supported. Try opening this page in the latest version of Firefox or Chrome.
+			</div>
 
-        <p class="view"><a href="https://github.umn.edu/thoma127/conversion-goal-tracking">View the Project on GitHub <small>thoma127/conversion-goal-tracking</small></a></p>
+			<!-- slide 1 -->
+			<div class="step" id="intro" data-z="12500">
+				<h1>Conversion Goal Tracking in Google Analytics</h1>
+			</div>
 
+			<!-- slide 2 -->
+			<div class="step" id="definition" data-z="1200">
+				<h2>Conversion Goal</h2>
+				<p>A desired page or action that is defined as being more valuable than a standard page view.</p>
+			</div>
 
-      </header>
-      <section>
-        <h1>Pages Coming Soon</h1>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.umn.edu/thoma127">thoma127</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+			<!-- slide 3 -->
+			<div class="step" id="simple-example" data-x="1020" data-z="1200" data-rotate-y="90">
+				<h2>A Simple Example</h2>
+				<img src="images/admin-1.png" alt="Screen shot of the Goals sections in Google Analytics.">
+			</div>
+
+			<!-- slide 4 -->
+			<div class="step" id="simple-example-2" data-x="2040" data-z="1200" data-rotate-y="180">
+				<h2>Set up the path to a goal.</h2>
+				<img src="images/admin-2.png" alt="Screen shot of the Goals sections in Google Analytics.">
+			</div>
+
+			<!-- slide 5 -->
+			<div class="step" id="report" data-x="3060" data-z="1200" data-rotate-y="270">
+				<h2>Conversion Tracking Report</h2>
+				<img src="images/goal-report.png" alt="Screen shot of the Goal Conversion Report in Google Analytics.">
+			</div>
+
+			<!-- slide 6 --><!-- Good slide to stand apart from others -->
+			<div class="step" id="more-advanced" data-x="4080" data-z="1200" data-rotate-y="360">
+				<h2>What if you want to track a form that doesn't redirect to a new URL?</h2>
+			</div>
+
+			<!-- slide 7 -->
+			<div class="step" id="virtual-pageview-tracking" data-x="4080" data-y="820" data-z="1200">
+				<h2>Tracking Virtual Pageviews</h2>
+				<pre class="code" lang="js">// When someone clicks or tabs to the next form element,
+// we record they've completed a step.                                                             
+$('.new-group-reg').live('blur', function ()                                                                                                             
+{                                                                                                                                                        
+	if ($(this).val() != '')                                                                                                                             
+    {                                                                                                                                                    
+        pageview_string = '/groups/reg-tracking/new/' + $(this).attr('id');                                                                              
+                                                                                                                                                             
+        // Push the data to GA.                                                                                                                          
+        _gaq.push(['_trackPageview', pageview_string]);                                                                                                  
+    }                                                                                                                                                    
+});</pre>
+			</div>
+			
+			<!-- slide-8 -->
+			<div class="step" id="define-steps-pt-i" data-x="6120" data-y="820" data-z="1200" data-rotate-y="90">
+				<h2>Define Steps</h2>
+				<img src="images/define-steps-1.png" alt="Screen shot of defining goal URL in Google Analytics.">
+			</div>
+
+			<!-- slide-9 -->
+			<div class="step" id="define-steps-pt-ii" data-x="7140" data-y="820" data-z="1200" data-rotate-y="180">
+				<h2>Define Steps</h2>
+				<img src="images/define-steps-2.png" alt="Screen shot of defining goal steps in Google Analytics.">
+			</div>
+
+			<!-- slide-10 -->
+			<div class="step" id="set-up-filter" data-x="8160" data-y="820" data-z="1200" data-rotate-y="270">
+				<h2>Set Up Filter To Prevent Pageview Inflation</h2>
+				<img src="images/set-up-filter-1.png" alt="Screen shot of setting up a profile filter in Google Analytics.">
+			</div>
+
+			<!-- slide-11 -->
+			<div class="step" id="new-profile" data-x="9180" data-y="820" data-z="1200" data-rotate-y="360">
+				<h2>Set Up New Profile</h2>
+				<img src="images/set-up-new-profile.png" alt="Screen shot of setting up a new profile in Google Analytics.">
+			</div>
+
+			<!-- slide-12 -->
+			<div class="step" id="include-filter" data-z="-25000" data-rotate-y="180">
+				<h2>Set Up Include Filter</h2>
+				<img src="images/set-up-include-filter.png" alt="Screen shot of setting up a new profile in Google Analytics.">
+			</div>
+
+			<!-- slide 13 -->
+			<div class="step" id="flow-report" data-z="-12500" data-rotate-y="180">
+				<h2>Goal Flow Report</h2>
+				<a href="images/goal-flow-report.png"><img src="images/goal-flow-report.png" alt="Sample of Goal Flow Report in Google Analytics."></a>
+			</div>
+
+			<!-- Impress.js -->
+			<script type="text/javascript" src="js/impress/js/impress.js"></script>	
+			<script>impress().init();</script>
+
+			<!-- highlight.js Syntax highlighting -->
+			<script type="text/javascript" src="js/highlight/highlight.js"></script>	
+			<script type="text/javascript" src="js/presentation.js"></script>	
+		</div>
+	</body>
 </html>
